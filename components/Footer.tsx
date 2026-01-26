@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Heart, Mail, MapPin, Phone, MessageCircle, Facebook, Instagram } from 'lucide-react';
+import { Heart, Mail, MapPin, Phone, MessageCircle, Facebook, Instagram, Shield } from 'lucide-react';
 
 const footerLinks = {
   about: [
@@ -87,7 +87,7 @@ export function Footer() {
             <ul className="space-y-3 text-gray-400">
               <li className="flex items-start gap-2">
                 <MapPin size={20} className="flex-shrink-0 mt-0.5" />
-                <span>Philadelphia, PA 19114</span>
+                <span>Philadelphia, PA</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={20} className="flex-shrink-0" />
@@ -145,10 +145,14 @@ export function Footer() {
               <p className="text-gray-400 text-sm">
                 &copy; {currentYear} The Acts Foundation. All rights reserved.
               </p>
-              <p className="text-gray-500 text-[11px] leading-relaxed">
-                The Acts Foundation (7404635) is a 501(C)3 registered since 2021
-              </p>
-              <p className="text-gray-400 text-xs italic opacity-75">
+              <div className="mt-2 px-4 py-2 bg-white/5 border border-white/10 rounded-lg flex items-center gap-2">
+                <Shield size={14} className="text-hope-green" />
+                <span className="text-[11px] font-bold tracking-wider text-gray-300 uppercase">
+                  501(C)3 Registered Nonprofit 2021
+                </span>
+                <span className="text-[10px] text-gray-500 font-mono">#7404635</span>
+              </div>
+              <p className="text-gray-400 text-xs italic opacity-75 mt-2">
                 Acts 20:35 - It is more blessed to give than to receive.
               </p>
             </div>

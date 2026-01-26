@@ -8,10 +8,8 @@ export const organizationSchema = {
   description: 'The Acts Foundation serves 1,000+ families monthly through food support, outreach, and faith in action. Fighting food insecurity in Philadelphia.',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '3599 Nottingham Lane Unit K',
     addressLocality: 'Philadelphia',
     addressRegion: 'PA',
-    postalCode: '19114',
     addressCountry: 'US'
   },
   telephone: '+1-609-309-4280',

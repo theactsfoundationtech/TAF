@@ -50,11 +50,11 @@ export function LiveImpactCounter() {
     }, []);
 
     return (
-        <div className="inline-flex flex-col sm:flex-row items-center gap-6 sm:gap-12 bg-white/12 backdrop-blur-xl border border-white/20 p-6 sm:p-8 rounded-[2.5rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.6)]">
+        <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 bg-white/12 backdrop-blur-xl border border-white/20 p-5 sm:p-6 rounded-[2rem] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.6)] scale-90 sm:scale-100 lg:scale-95 xl:scale-100 origin-center lg:origin-right transition-transform duration-300">
             <div className="flex items-center gap-5 sm:border-r border-white/10 sm:pr-12 pb-6 sm:pb-0">
                 <div className="relative">
-                    <div className="w-16 h-16 bg-hope-green/20 rounded-2xl flex items-center justify-center text-hope-green shadow-inner">
-                        <Box size={32} strokeWidth={1.5} />
+                    <div className="w-12 h-12 bg-hope-green/20 rounded-xl flex items-center justify-center text-hope-green shadow-inner">
+                        <Box size={24} strokeWidth={1.5} />
                     </div>
                     <motion.div
                         className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-hope-green rounded-full border-[3px] border-[#0F172A]"
@@ -69,20 +69,20 @@ export function LiveImpactCounter() {
                     </div>
                     <div className="flex items-center gap-2">
                         <Counter value={count} />
-                        <span className="text-white/90 text-sm font-heading font-bold uppercase tracking-widest mt-1.5">Boxes</span>
+                        <span className="text-white/90 text-[10px] font-heading font-bold uppercase tracking-widest mt-1">Boxes</span>
                     </div>
                     <p className="text-white/60 text-[10px] font-medium tracking-wide">Delivered this month</p>
                 </div>
             </div>
 
             <div className="flex items-center gap-5">
-                <div className="w-16 h-16 bg-accent-red/20 rounded-2xl flex items-center justify-center text-accent-red shadow-inner">
-                    <Users size={32} strokeWidth={1.5} />
+                <div className="w-12 h-12 bg-accent-red/20 rounded-xl flex items-center justify-center text-accent-red shadow-inner">
+                    <Users size={24} strokeWidth={1.5} />
                 </div>
                 <div>
                     <div className="flex items-center gap-2">
                         <Counter value={Math.floor(count * 0.85)} />
-                        <span className="text-white/90 text-sm font-heading font-bold uppercase tracking-widest mt-1.5">Families</span>
+                        <span className="text-white/90 text-[10px] font-heading font-bold uppercase tracking-widest mt-1">Families</span>
                     </div>
                     <p className="text-white/60 text-[10px] font-medium tracking-wide">Reached & Supported</p>
                 </div>
@@ -104,7 +104,7 @@ function Counter({ value }: { value: number }) {
     }, [value]);
 
     return (
-        <span className="text-4xl sm:text-5xl font-heading font-black text-white tabular-nums tracking-tighter drop-shadow-lg">
+        <span className="text-3xl sm:text-4xl font-heading font-black text-white tabular-nums tracking-tighter drop-shadow-lg">
             {displayValue.toLocaleString()}
         </span>
     );

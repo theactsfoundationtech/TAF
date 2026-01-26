@@ -77,14 +77,14 @@ export default function HomePage() {
         id="hero"
         fullHeight
         bgColor="blue"
-        className="flex items-center relative overflow-hidden pt-28 md:pt-0"
+        className="flex items-center relative overflow-hidden pt-40 pb-20"
       >
         <div className="absolute inset-0 opacity-10">
           <SilhouetteScene scene="city" />
         </div>
-        <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center">
           <div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight mb-6 text-white">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6 text-white max-w-xl">
               Fighting Food Insecurity in Philadelphia
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
@@ -111,7 +111,7 @@ export default function HomePage() {
               </Button>
             </div>
           </div>
-          <div className="flex flex-col justify-center items-center lg:items-end">
+          <div className="flex flex-col justify-center items-center lg:items-center">
             <div className="lg:mr-12 xl:mr-24 z-20">
               <LiveImpactCounter />
             </div>

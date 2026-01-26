@@ -69,7 +69,6 @@ export default function RootLayout({
                 "@type": "PostalAddress",
                 "addressLocality": "Philadelphia",
                 "addressRegion": "PA",
-                "postalCode": "19114",
                 "addressCountry": "US"
               },
               "contactPoint": {
