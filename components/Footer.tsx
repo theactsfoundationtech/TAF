@@ -145,6 +145,9 @@ export function Footer() {
               <p className="text-gray-400 text-sm">
                 &copy; {currentYear} The Acts Foundation. All rights reserved.
               </p>
+              <p className="text-gray-500 text-[11px] leading-relaxed">
+                The Acts Foundation (7404635) is a 501(C)3 registered since 2021
+              </p>
               <p className="text-gray-400 text-xs italic opacity-75">
                 Acts 20:35 - It is more blessed to give than to receive.
               </p>
@@ -153,7 +156,7 @@ export function Footer() {
 
           <div className="text-center mt-8 border-t border-gray-800/50 pt-4">
             <p className="text-gray-500 text-[10px]">
-              Developed with ❤️ by <a href="https://intelleadgen.io/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors underline underline-offset-2">IntelleadGen Studio</a>
+              Developed with ❤️ by <a href="https://intelleadgen.com/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors underline underline-offset-2">IntelleadGen Studio</a>
             </p>
           </div>
         </div>

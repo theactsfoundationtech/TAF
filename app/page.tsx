@@ -112,7 +112,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="flex flex-col justify-center items-center md:items-end">
-            <div className="md:-mt-28 md:mr-24">
+            <div className="md:mr-24 z-20">
               <LiveImpactCounter />
             </div>
             {/* Repositioned family silhouette to prevent pushing counter down */}

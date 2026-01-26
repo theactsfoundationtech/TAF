@@ -50,41 +50,41 @@ export function LiveImpactCounter() {
     }, []);
 
     return (
-        <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 bg-white/10 backdrop-blur-md border border-white/20 p-4 sm:p-6 rounded-3xl shadow-2xl">
-            <div className="flex items-center gap-4 border-b sm:border-b-0 sm:border-r border-white/10 pb-4 sm:pb-0 sm:pr-8">
+        <div className="inline-flex flex-col sm:flex-row items-center gap-6 sm:gap-12 bg-white/5 backdrop-blur-xl border border-white/10 p-6 sm:p-8 rounded-[2.5rem] shadow-[0_0_40px_-12px_rgba(0,0,0,0.4)]">
+            <div className="flex items-center gap-5 sm:border-r border-white/10 sm:pr-12 pb-6 sm:pb-0">
                 <div className="relative">
-                    <div className="w-12 h-12 bg-hope-green/20 rounded-2xl flex items-center justify-center text-hope-green">
-                        <Box size={24} />
+                    <div className="w-16 h-16 bg-hope-green/20 rounded-2xl flex items-center justify-center text-hope-green shadow-inner">
+                        <Box size={32} strokeWidth={1.5} />
                     </div>
                     <motion.div
-                        className="absolute -top-1 -right-1 w-3 h-3 bg-hope-green rounded-full border-2 border-primary-blue"
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ duration: 2, repeat: Infinity }}
+                        className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-hope-green rounded-full border-[3px] border-[#0F172A]"
+                        animate={{ scale: [1, 1.2, 1], opacity: [1, 0.8, 1] }}
+                        transition={{ duration: 2.5, repeat: Infinity }}
                     />
                 </div>
                 <div>
-                    <div className="flex items-center gap-1.5 mb-0.5">
-                        <span className="w-1.5 h-1.5 bg-hope-green rounded-full animate-pulse" />
-                        <span className="text-[10px] uppercase tracking-widest text-hope-green font-bold">Live Impact</span>
+                    <div className="flex items-center gap-2 mb-1">
+                        <span className="w-1.5 h-1.5 bg-hope-green rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.4)]" />
+                        <span className="text-[10px] uppercase tracking-[0.2em] text-hope-green font-bold">Live Impact</span>
                     </div>
-                    <div className="flex items-baseline gap-1">
+                    <div className="flex items-center gap-2">
                         <Counter value={count} />
-                        <span className="text-white/60 text-xs font-medium uppercase tracking-tighter">Boxes</span>
+                        <span className="text-white/70 text-sm font-heading font-bold uppercase tracking-widest mt-1.5">Boxes</span>
                     </div>
-                    <p className="text-white/40 text-[10px] font-medium leading-none">Delivered this month</p>
+                    <p className="text-white/30 text-[10px] font-medium tracking-wide">Delivered this month</p>
                 </div>
             </div>
 
-            <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-accent-red/20 rounded-2xl flex items-center justify-center text-accent-red">
-                    <Users size={24} />
+            <div className="flex items-center gap-5">
+                <div className="w-16 h-16 bg-accent-red/20 rounded-2xl flex items-center justify-center text-accent-red shadow-inner">
+                    <Users size={32} strokeWidth={1.5} />
                 </div>
                 <div>
-                    <div className="flex items-baseline gap-1 mb-0.5">
+                    <div className="flex items-center gap-2">
                         <Counter value={Math.floor(count * 0.85)} />
-                        <span className="text-white/60 text-xs font-medium uppercase tracking-tighter">Families</span>
+                        <span className="text-white/70 text-sm font-heading font-bold uppercase tracking-widest mt-1.5">Families</span>
                     </div>
-                    <p className="text-white/40 text-[10px] font-medium leading-none">Reached & Supported</p>
+                    <p className="text-white/30 text-[10px] font-medium tracking-wide">Reached & Supported</p>
                 </div>
             </div>
         </div>
@@ -96,7 +96,7 @@ function Counter({ value }: { value: number }) {
 
     useEffect(() => {
         const controls = animate(displayValue, value, {
-            duration: 1.5,
+            duration: 2,
             onUpdate: (latest) => setDisplayValue(Math.floor(latest)),
             ease: "easeOut"
         });
@@ -104,8 +104,8 @@ function Counter({ value }: { value: number }) {
     }, [value]);
 
     return (
-        <span className="text-2xl font-heading font-black text-white tabular-nums tracking-tighter">
-            {displayValue}
+        <span className="text-4xl sm:text-5xl font-heading font-black text-white tabular-nums tracking-tighter drop-shadow-lg">
+            {displayValue.toLocaleString()}
         </span>
     );
 }
