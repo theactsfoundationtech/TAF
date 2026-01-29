@@ -14,6 +14,27 @@ import { ArrowRight, Heart, Users, Package, MapPin, Sparkles } from 'lucide-reac
 
 const sampleDonors: Donor[] = [
   {
+    id: 'corp-1',
+    name: 'Country Wide Home Care',
+    isAnonymous: false,
+    city: 'Philadelphia, PA',
+    badgeLevel: 'philadelphia-champion',
+    logoUrl: '/images/logos/countrywide-logo.png',
+    website: 'https://countrywidehomecare.com/',
+    message: 'Proud to support The Acts Foundation in their mission to serve Philadelphia families.',
+    createdAt: '2024-01-20'
+  },
+  {
+    id: 'corp-2',
+    name: 'Casa De Avivamiento - House of Revival International',
+    isAnonymous: false,
+    city: 'Philadelphia, PA',
+    badgeLevel: 'philadelphia-champion',
+    logoUrl: '/images/logos/casa-de-avivamiento-logo.jpg',
+    message: 'Dedicated to bringing revival and hope to our community.',
+    createdAt: '2024-01-25'
+  },
+  {
     id: '1',
     name: 'Sarah M.',
     isAnonymous: false,

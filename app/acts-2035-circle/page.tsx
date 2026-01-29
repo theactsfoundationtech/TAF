@@ -15,6 +15,27 @@ export const metadata: Metadata = {
 };
 
 const donors: Donor[] = [
+  {
+    id: 'corp-1',
+    name: 'Country Wide Home Care',
+    isAnonymous: false,
+    city: 'Philadelphia, PA',
+    badgeLevel: 'philadelphia-champion',
+    logoUrl: '/images/logos/countrywide-logo.png',
+    website: 'https://countrywidehomecare.com/',
+    message: 'Proud to support The Acts Foundation in their mission to serve Philadelphia families.',
+    createdAt: '2024-01-20'
+  },
+  {
+    id: 'corp-2',
+    name: 'Casa De Avivamiento - House of Revival International',
+    isAnonymous: false,
+    city: 'Philadelphia, PA',
+    badgeLevel: 'philadelphia-champion',
+    logoUrl: '/images/logos/casa-de-avivamiento-logo.jpg',
+    message: 'Dedicated to bringing revival and hope to our community.',
+    createdAt: '2024-01-25'
+  },
   { id: '1', name: 'Sarah M.', isAnonymous: false, city: 'Philadelphia, PA', badgeLevel: 'family-sponsor', message: 'So grateful to be part of this mission.', createdAt: '2024-01-15' },
   { id: '2', name: 'Anonymous', isAnonymous: true, city: 'New York, NY', badgeLevel: 'community-builder', message: 'Every family deserves dignity and hope.', createdAt: '2024-02-20' },
   { id: '3', name: 'Michael T.', isAnonymous: false, city: 'Camden, NJ', badgeLevel: 'philadelphia-champion', message: 'Proud to support Philadelphia families.', createdAt: '2023-12-10' },

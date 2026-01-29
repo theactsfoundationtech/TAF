@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { BadgeTag, BadgeLevel } from './BadgeTag';
-import { MapPin } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export interface Donor {
@@ -12,6 +12,8 @@ export interface Donor {
   city?: string;
   badgeLevel: BadgeLevel;
   message?: string;
+  logoUrl?: string;
+  website?: string;
   createdAt: string;
 }
 
@@ -122,12 +124,26 @@ function DateDisplay({ date }: { date: string }) {
 }
 
 function DonorCard({ donor }: { donor: Donor }) {
-  return (
-    <div className="bg-white rounded-2xl border-2 border-gray-100 shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:scale-105">
-      <div className="flex items-start justify-between mb-3">
-        <h4 className="text-xl font-heading font-bold text-gray-900">
-          {donor.isAnonymous ? 'Anonymous' : donor.name}
-        </h4>
+  const CardContent = (
+    <div className={cn(
+      "bg-white rounded-2xl border-2 border-gray-100 shadow-lg p-6 transition-all duration-300 h-full",
+      donor.website ? "hover:shadow-xl hover:scale-105 hover:border-primary-blue cursor-pointer" : "hover:shadow-xl hover:scale-105"
+    )}>
+      <div className="flex items-start justify-between mb-4">
+        <div className="flex-1">
+          {donor.logoUrl && !donor.isAnonymous ? (
+            <div className="mb-3 h-12 flex items-center">
+              <img
+                src={donor.logoUrl}
+                alt={`${donor.name} logo`}
+                className="max-h-full max-w-[150px] object-contain"
+              />
+            </div>
+          ) : null}
+          <h4 className="text-xl font-heading font-bold text-gray-900 leading-tight">
+            {donor.isAnonymous ? 'Anonymous' : donor.name}
+          </h4>
+        </div>
         <BadgeTag level={donor.badgeLevel} />
       </div>
 
@@ -139,16 +155,36 @@ function DonorCard({ donor }: { donor: Donor }) {
       )}
 
       {donor.message && (
-        <p className="text-gray-700 text-sm leading-relaxed italic border-l-4 border-hope-green pl-3">
+        <p className="text-gray-700 text-sm leading-relaxed italic border-l-4 border-hope-green pl-3 mb-4">
           &quot;{donor.message}&quot;
         </p>
       )}
 
-      <div className="mt-4 pt-4 border-t border-gray-100">
+      <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
         <p className="text-xs text-gray-500">
           Joined <DateDisplay date={donor.createdAt} />
         </p>
+        {donor.website && (
+          <span className="text-primary-blue text-xs font-semibold flex items-center gap-1">
+            Visit Website <ArrowRight size={12} />
+          </span>
+        )}
       </div>
     </div>
   );
+
+  if (donor.website) {
+    return (
+      <a
+        href={donor.website}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block h-full group"
+      >
+        {CardContent}
+      </a>
+    );
+  }
+
+  return CardContent;
 }
